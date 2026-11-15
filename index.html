@@ -38,7 +38,7 @@ a{color:#2868A4}a:hover{color:#1d4f7f}
 @media (max-width: 900px){.store-m dl{font-size:clamp(11px,calc((100vw - 82px) / 18),17px) !important}.store-m dd{white-space:nowrap}.note-m{font-size:clamp(11px,calc((100vw - 82px) / 18),17px) !important}.store-m{padding-top:70px !important}}
 @media (max-width: 700px){.cdbox{margin-top:16px !important}.cdrow{row-gap:16px}}
 h1 .t-one{display:none}
-@media (min-width: 701px){h1 .t-two{display:none}h1 .t-one{display:block;width:calc(var(--fs) * 20)}.dt{font-size:calc(var(--fs) * 1.25)}}
+@media (min-width: 701px){.dt{font-size:calc(var(--fs) * 1.25)}}
 .store-d .btns{flex-wrap:wrap !important;gap:10px !important}
 .store-d .btn{padding:10px 16px}
 @media (min-width: 901px){.store-d{display:flex}.store-m .store{display:none !important}.store-m{padding-top:0 !important}}
@@ -153,6 +153,18 @@ h1 .t-one{display:none}
 .calm .title-line,.calm .bubble,.calm .bimg{opacity:1;transform:none}
 .calm .typing{width:15ch;border-right-color:transparent}
 .calm .reveal .arrow{clip-path:none}.calm .tgh.in .tag-img{translate:none;filter:none}.calm .tier.reveal.in{translate:none;box-shadow:none;background:rgba(255,255,255,.62)}
+
+/* 網頁版：酒杯依原稿配置分為左右兩組，頁面變寬時各自靠邊，中央留白 */
+.gl-scene{display:none}
+@media (min-width: 701px){
+.gl-m{display:none !important}
+.gl-scene{display:flex;justify-content:space-between;align-items:flex-end;width:100%;animation:glIn 1.2s cubic-bezier(.2,.8,.2,1) .5s both}
+.gl-scene img{display:block;flex:none;height:auto}
+.gl-l{width:min(32.62%,469.7px)}
+.gl-r{width:min(41.685%,600.3px)}
+.fwx .fw-e{top:auto !important;bottom:calc(100% - 376px + 36px) !important;width:min(8.82%,170px) !important}
+.fwx .fw-b{top:min(35.69%,calc(380px - 38.05%)) !important}
+}
 @media (prefers-reduced-motion: reduce){.tag-img,.beat,.tw,.fw-l,.bob{animation:none !important}.fw-l{stroke-dashoffset:0 !important}}
 /* responsive */
 .cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px}
@@ -160,6 +172,20 @@ h1 .t-one{display:none}
 @media (max-width: 700px){.qr-wrap{display:none !important}.cd-label{flex:0 0 100%;text-align:center}.hd{padding: 20px 20px 0 !important}.btns{gap:8px !important}.btns .btn{flex:1 1 0;padding:10px 4px;font-size:clamp(12px,3.4vw,16px)}}
 @media (max-width: 520px){.b2{margin-left:0 !important}.navlinks{display:none !important}.cd-num{font-size:23px}.cd-lab,.cd-label{font-size:15px}.cdrow{gap:6px 10px}.cd-g{gap:4px}}
 
+/* 網頁版：煙火、標題、對話框與酒杯圖 */
+@media (min-width: 701px){
+.hero{padding-top:calc(var(--fs) * 4.1)}
+h1 .t-two{width:calc(var(--fs) * 13)}
+.date{margin-top:34px !important}
+.fwx .fw-a{left:calc(50% - 346px - 20.706%) !important;width:15.53% !important}
+.fwx .fw-b{left:92.598% !important;width:6.852% !important}
+.fwx .fw-c{left:39.6225% !important;width:12.975% !important;bottom:calc(100% - var(--fs) * 4.1 + 6px) !important}
+.fwx .fw-d{left:calc(50% + 238px) !important;width:12.7275% !important}
+.bubs{flex-direction:row !important;max-width:min(calc(var(--fs) * 24.4),100%) !important}
+.bubs .bimg1{width:55.1% !important}
+.bubs .bimg2{width:41.9% !important;margin-left:3% !important;margin-top:3.2% !important}
+.hero>div:last-child{margin-top:-125px !important}
+}
 @media (prefers-reduced-motion: reduce){.title-line,.bimg{opacity:1;transform:none}}
 </style>
 </head>
@@ -179,7 +205,7 @@ h1 .t-one{display:none}
 </header>
 
 <section id="top" class="hero">
-<div class="fwx" aria-hidden="true"><img src="fw-red-l.svg" alt="" style="left:8.2%;top:3.29%;width:24.36%;transform-origin:34% 0%;animation-delay:0s"><img src="fw-teal.svg" alt="" style="left:37.46%;bottom:calc(100% - var(--fs) * 2.6 + 6px);width:17.30%;transform-origin:50% 100%;animation-delay:1.2s"><img src="fw-yel-top.svg" alt="" style="left:61.65%;top:0;width:16.97%;transform-origin:50% 0%;animation-delay:.6s"><img src="fw-red-r.svg" alt="" style="left:88.03%;top:23.00%;width:11.42%;transform-origin:100% 50%;animation-delay:1.8s"><img src="fw-yel-l.svg" alt="" style="left:0;top:46.48%;width:11.76%;transform-origin:0% 50%;animation-delay:2.4s"></div>
+<div class="fwx" aria-hidden="true"><img class="fw-a" src="fw-red-l.svg" alt="" style="left:8.2%;top:3.29%;width:24.36%;transform-origin:34% 0%;animation-delay:0s"><img class="fw-c" src="fw-teal.svg" alt="" style="left:37.46%;bottom:calc(100% - var(--fs) * 2.6 + 6px);width:17.30%;transform-origin:50% 100%;animation-delay:1.2s"><img class="fw-d" src="fw-yel-top.svg" alt="" style="left:61.65%;top:0;width:16.97%;transform-origin:50% 0%;animation-delay:.6s"><img class="fw-b" src="fw-red-r.svg" alt="" style="left:88.03%;top:23.00%;width:11.42%;transform-origin:100% 50%;animation-delay:1.8s"><img class="fw-e" src="fw-yel-l.svg" alt="" style="left:0;top:46.48%;width:11.76%;transform-origin:0% 50%;animation-delay:2.4s"></div>
 
 <div id="offer" style="position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 0 24px; text-align: center">
 <h1 style="margin: 0"><img class="title-line title-img t-two" src="title-two.svg" alt="誠品酒窖 安和門市週年慶" width="349" height="104"><img class="title-line title-img t-one" src="title-one.svg" alt="誠品酒窖 安和門市週年慶" width="552" height="44"></h1>
@@ -193,7 +219,7 @@ h1 .t-one{display:none}
 <div class="cdrow" role="timer" aria-live="off"><span class="cd-label">週年慶開跑倒數…</span><span class="cd-g"><span class="cd-num pxf" id="cd-d">00</span><span class="cd-lab">天</span></span><span class="cd-g"><span class="cd-num pxf" id="cd-h">00</span><span class="cd-lab">時</span></span><span class="cd-g"><span class="cd-num pxf" id="cd-m">00</span><span class="cd-lab">分</span></span><span class="cd-g"><span class="cd-num pxf" id="cd-s">00</span><span class="cd-lab">秒</span></span></div>
 </div>
 </div>
-<div style="position: relative; z-index: 1; margin-top: 0"><div class="gl-wrap"><img class="gl-img" src="glasses.png" alt="" width="2000" height="1205"></div></div>
+<div style="position: relative; z-index: 1; margin-top: 0"><div class="gl-wrap gl-m"><img class="gl-img" src="glasses.png" alt="" width="2000" height="1205"></div><div class="gl-scene" aria-hidden="true"><img class="gl-l" src="gl-left.png" alt="" width="932" height="1155"><img class="gl-r" src="gl-right.png" alt="" width="1191" height="1155"></div></div>
 </section>
 
 <div class="ticker" style="background: #D63B86; color: #FFFFFF; padding: 14px 0; border-top: 4px solid #221714; border-bottom: 4px solid #221714">
