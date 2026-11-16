@@ -2,6 +2,18 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WC01M1P29B"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-WC01M1P29B');
+</script>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "zefufais90");
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>誠品酒窖 安和門市週年慶 2026</title>
 <meta name="description" content="誠品酒窖安和門市週年慶 2026/11/27–12/07，消費滿萬現折 $800 及多項贈禮。">
@@ -142,6 +154,10 @@ h1 .t-one{display:none}
 
 .disc{width:fit-content;max-width:100%;white-space:nowrap;font-size:min(17px,calc((100vw - 64px) / 49));text-align:left}
 @media (max-width: 700px){.disc{width:auto;max-width:560px;white-space:normal;font-size:14px}}
+.discw{width:fit-content;max-width:100%}
+.disc-note{width:0;min-width:100%;margin:12px 0 0;line-height:1.7;white-space:normal;font-size:9px;color:#8A8380}
+.disc-note a{color:inherit}
+@media (max-width: 700px){.discw{width:auto;max-width:560px}.disc-note{width:auto;min-width:0;font-size:12px}}
 .nd-ring{stroke-width:3.2}
 .nd{width:1.5em;height:1.5em;flex:none}
 .tier.reveal{transition:translate .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease,background .45s ease}
@@ -299,7 +315,7 @@ h1 .t-two{width:calc(var(--fs) * 13)}
 </div>
 
 </div>
-<p class="disc" style="margin: 48px auto 0; line-height: 1.85">誠品酒窖保有最終修改、變更、活動解釋及取消本活動之權利，若有相關異動將公告於網站，恕不另行通知。</p>
+<div class="discw" style="margin: 48px auto 0"><p class="disc" style="margin: 0; line-height: 1.85">誠品酒窖保有最終修改、變更、活動解釋及取消本活動之權利，若有相關異動將公告於網站，恕不另行通知。</p><p class="disc disc-note">本網站使用 Cookie 及 Google Analytics、Microsoft Clarity 分析瀏覽行為以優化網站，詳見 <a href="https://policies.google.com/technologies/partner-sites?hl=zh-TW" target="_blank" rel="noopener">Google</a> 與 <a href="https://privacy.microsoft.com/zh-tw/privacystatement" target="_blank" rel="noopener">Microsoft</a> 隱私權政策。</p></div>
 </section>
 
 <div class="ft-sp" aria-hidden="true"></div>
@@ -342,6 +358,33 @@ h1 .t-two{width:calc(var(--fs) * 13)}
   window.addEventListener('scroll',onScroll,true);
   window.addEventListener('resize',onScroll);
   measure();
+})();
+</script>
+<script>
+/* 數據追蹤事件：區塊被看見（每區塊只記一次）、選單與按鈕點擊 */
+(function(){
+  function track(name,params){
+    try{ if(typeof gtag==='function') gtag('event',name,params); }catch(e){}
+    try{ if(typeof clarity==='function') clarity('event',name); }catch(e){}
+  }
+  var names={gifts:'滿額禮',vip:'大戶禮',store:'門市資訊'};
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){ track('section_view',{section_id:e.target.id,section_name:names[e.target.id]}); io.unobserve(e.target); }
+      });
+    },{threshold:0.2});
+    ['gifts','vip','store'].forEach(function(id){ var s=document.getElementById(id); if(s) io.observe(s); });
+  }
+  document.addEventListener('click',function(ev){
+    var a=ev.target.closest&&ev.target.closest('a'); if(!a) return;
+    var href=a.getAttribute('href')||'';
+    if(a.closest('.nav')){ track('nav_click',{link_target:href.replace('#',''),link_text:a.textContent.trim()}); return; }
+    if(a.classList.contains('btn')){
+      var t=href.indexOf('tel:')===0?'tel':href.indexOf('line.me')>-1?'line':href.indexOf('google.com/maps')>-1?'map':'other';
+      track('cta_click',{cta_type:t,link_text:a.textContent.trim()});
+    }
+  });
 })();
 </script>
 </body>
